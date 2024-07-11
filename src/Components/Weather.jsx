@@ -14,22 +14,22 @@ export function Weather() {
   const [weatherData, setWeatherData] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const allIconsCode = {
-    "01d": clear_icon,
-    "01n": clear_icon,
-    "02d": cloud_icon,
-    "02n": cloud_icon,
-    "03d": cloud_icon,
-    "03n": cloud_icon,
-    "04d": drizzle_icon,
-    "04n": drizzle_icon,
-    "09d": rain_icon,
-    "09n": rain_icon,
-    "10d": rain_icon,
-    "10n": rain_icon,
-    "13d": snow_icon,
-    "13n": snow_icon,
-  };
+  // const allIconsCode = {
+  //   "01d": clear_icon,
+  //   "01n": clear_icon,
+  //   "02d": cloud_icon,
+  //   "02n": cloud_icon,
+  //   "03d": cloud_icon,
+  //   "03n": cloud_icon,
+  //   "04d": drizzle_icon,
+  //   "04n": drizzle_icon,
+  //   "09d": rain_icon,
+  //   "09n": rain_icon,
+  //   "10d": rain_icon,
+  //   "10n": rain_icon,
+  //   "13d": snow_icon,
+  //   "13n": snow_icon,
+  // };
 
   async function search(city) {
     if (city === "") {
@@ -47,7 +47,9 @@ export function Weather() {
         windSpeed: data.wind.speed,
         temperature: Math.floor(data.main.temp),
         location: data.name,
-        icon: allIconsCode[data.weather[0].icon] || clear_icon,
+        icon:
+          `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png` ||
+          clear_icon,
       });
       setLoading(false);
     } catch (e) {

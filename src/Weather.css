@@ -15,6 +15,7 @@
 }
 
 .search-bar input {
+  width: 360px;
   height: 50px;
   border: none;
   outline: none;
@@ -41,8 +42,8 @@ main {
 }
 
 .weather-icon {
-  width: 150px;
-  margin: 30px 0;
+  width: 120px;
+  margin: 30px 0 20px;
 }
 
 .temperature {
@@ -53,13 +54,36 @@ main {
 
 .location {
   color: #fff;
-  font-size: 40px;
+  font-size: 36px;
+}
+
+.country {
+  color: #fff;
+  font-size: 18px;
 }
 
 .weather-data {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 16px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lat-lon {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.lat-lon p:nth-child(2n) {
+  font-size: 24px;
+}
+
+.humidity-wind {
+  margin: 40px 0 0 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -79,6 +103,10 @@ main {
 .weather-data .col img {
   width: 27px;
   margin-top: 10px;
+}
+
+.weather-data .col p {
+  color: #ec9f05;
 }
 
 .city-not-found,
@@ -102,21 +130,26 @@ main {
 @media (max-width: 500px) {
   .app {
     background-image: linear-gradient(40deg, #2f4680, #500ae4);
+    display: flex;
+    justify-content: center;
   }
+
   .container {
+    place-self: initial;
     padding: 20px;
     background: transparent;
+    padding-top: 50px;
   }
 
   .search-bar {
-    gap: 5px;
+    gap: 10px;
   }
 
   .search-bar input {
     height: 40px;
     padding-left: 15px;
     font-size: 16px;
-    width: 250px;
+    width: 230px;
   }
 
   .search-bar img {
@@ -136,6 +169,14 @@ main {
     font-size: 30px;
   }
 
+  .lat-lon p {
+    font-size: 12px;
+  }
+
+  .lat-lon p:nth-child(2n) {
+    font-size: 18px;
+  }
+
   .weather-data .col {
     gap: 10px;
     font-size: 18px;
@@ -151,5 +192,17 @@ main {
 
   .loading {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-bar {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 315px) {
+  .container {
+    padding: 20px 0;
   }
 }

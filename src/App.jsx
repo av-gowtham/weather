@@ -1,5 +1,6 @@
 import { Weather } from "./Components/Weather.jsx";
 import { HashRouter } from "react-router-dom";
+import "./index.css";
 import "./Weather.css";
 
 function App() {

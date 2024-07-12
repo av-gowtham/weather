@@ -48,6 +48,9 @@ export function Weather() {
         temperature: Math.floor(data.main.temp),
         location: data.name,
         icon: allIconsCode[data.weather[0].icon] || clear_icon,
+        lat: data.coord.lat,
+        lon: data.coord.lon,
+        country: data.sys.country,
       });
       setLoading(false);
     } catch (e) {
@@ -87,19 +90,32 @@ export function Weather() {
           <img className="weather-icon" src={weatherData.icon} alt="" />
           <p className="temperature">{weatherData.temperature}°c</p>
           <p className="location">{weatherData.location}</p>
+          <p className="country">{weatherData.country}</p>
           <div className="weather-data">
-            <div className="col">
-              <img src={humidity_icon} alt="" />
+            <div className="lat-lon">
               <div>
-                <p>{weatherData.humidity}%</p>
-                <span>Humidity</span>
+                <p>Latitude</p>
+                <p>{weatherData.lat}</p>
+              </div>
+              <div>
+                <p>Longitude</p>
+                <p>{weatherData.lon}</p>
               </div>
             </div>
-            <div className="col">
-              <img src={wind_icon} alt="" />
-              <div>
-                <p>{weatherData.windSpeed} km/h</p>
-                <span>Wind speed </span>
+            <div className="humidity-wind">
+              <div className="col">
+                <img src={humidity_icon} alt="" />
+                <div>
+                  <p>{weatherData.humidity}%</p>
+                  <span>Humidity</span>
+                </div>
+              </div>
+              <div className="col">
+                <img src={wind_icon} alt="" />
+                <div>
+                  <p>{weatherData.windSpeed} km/h</p>
+                  <span>Wind speed </span>
+                </div>
               </div>
             </div>
           </div>

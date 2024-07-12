@@ -61,7 +61,7 @@ export function Weather() {
   }
 
   useEffect(() => {
-    search("Bangalore");
+    search("Bengaluru");
   }, []);
 
   return (
@@ -89,7 +89,6 @@ export function Weather() {
           <img className="weather-icon" src={weatherData.icon} alt="" />
           <p className="temperature">{weatherData.temperature}°c</p>
           <p className="location">{weatherData.location}</p>
-
           <div className="weather-data">
             <div className="lat-lon">
               <div>

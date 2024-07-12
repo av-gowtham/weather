@@ -50,7 +50,6 @@ export function Weather() {
         icon: allIconsCode[data.weather[0].icon] || clear_icon,
         lat: data.coord.lat,
         lon: data.coord.lon,
-        country: data.sys.country,
       });
       setLoading(false);
     } catch (e) {
@@ -90,7 +89,7 @@ export function Weather() {
           <img className="weather-icon" src={weatherData.icon} alt="" />
           <p className="temperature">{weatherData.temperature}°c</p>
           <p className="location">{weatherData.location}</p>
-          <p className="country">{weatherData.country}</p>
+
           <div className="weather-data">
             <div className="lat-lon">
               <div>

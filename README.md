@@ -8,5 +8,5 @@
   <li>React.Js</li>
   <li>CSS</li>
   <li>HTML</li>
-  <li>APIs Intergation</li>
+  <li>APIs Integration</li>
 </ul>
